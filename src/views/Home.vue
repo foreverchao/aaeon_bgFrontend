@@ -1,7 +1,7 @@
 <template>
   <div class="container">
     <global-header :user="currentUser"></global-header>
-    <div class="home"></div>
+    <router-view></router-view>
   </div>
 </template>
 
@@ -9,14 +9,11 @@
 import { defineComponent } from 'vue';
 
 import 'bootstrap/dist/css/bootstrap.min.css'
-import GlobalHeader  from '../components/GlobalHeader.vue'
-interface UserProps {
-  isLogin: boolean;
-  name?: string;
-  id?: number;
-}
+import GlobalHeader , { UserProps }  from '../components/GlobalHeader.vue'
+
 const currentUser: UserProps = {
-    isLogin: false,
+    isLogin: true,
+    name: 'Yue',
 }
 export default defineComponent({
   name: 'Home',
